@@ -63,6 +63,7 @@ async def _validation_exception_handler(request, exc):
 @app.get("/sum")
 async def sum_endpoint(a: float, b: float):
     try:
+        
         return _ok(_calculator.sum(a, b))
     except Exception as e:
         return _error(str(e))
